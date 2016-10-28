@@ -12,6 +12,6 @@ services:
   - docker
 
 before_install:
-    - docker build -t webapp:test -f docker/Dockerfile .
+    - docker build -t webapp:test -f dockerfile/test .
 script:
     - docker run -it --rm -v $HOME/cache:/root/.nuget/packages webapp:test
