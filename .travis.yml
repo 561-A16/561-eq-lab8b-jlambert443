@@ -13,6 +13,7 @@ services:
 
 before_install:
     - docker build -t webapp:test -f dockerfile/test .
-    - docker build -t webapp:release -f ./dockerfile/release .
 script:
     - docker run -it --rm -v $HOME/cache:/root/.nuget/packages webapp:test
+    - docker run -it --rm -v $PWD/publish:/root/publish -v $PWD/packages:/root/.nuget/packages webapp:test
+    - docker build -t webapp:release -f ./dockerfile/release .
