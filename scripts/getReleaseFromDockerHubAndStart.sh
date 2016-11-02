@@ -1,5 +1,5 @@
 #!bin/bash
-set –v docker pull <image_release_sur_docker_hub>
-#docker stop $(docker ps -a -q)
-#docker rm $(docker ps -a -q)
-docker run -itd -p <port_host>:<port_docker> <image_release_sur_docker_hub>
+set –v docker pull webapp:release
+docker stop webapp:release
+docker rm webapp:release
+docker run -itd -p 6539:5000 webapp:release

@@ -24,4 +24,4 @@ script:
     #- docker build -t webapp:release -f ./dockerfile/release .
 
     - chmod ugo-x scripts/travisCI.sh
-    - sh ./script/travisCI.sh
+    - sh ./scripts/travisCI.sh
